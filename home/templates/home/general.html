@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+<div id="tooplate_main">
+{% block page_main %}
+  <div id="tooplate_sidebar">
+
+    <div class="sidebar_box">
+      <h2>Our Latest News</h2>
+      <div class="news_box">
+        <a href="#">Donec eu orci dolor</a>
+        <p>Integer eros augue, auctor vel scelerisque at, pellentesque sit amet odio. </p>
+      </div>
+      <div class="news_box">
+        <a href="#">Aliquam bibendum vulputate</a>
+        <p>Duis neque metus, ullamcorper sit amet dictum vel, tincidunt sit amet felis.</p>
+      </div>
+      <div class="news_box">
+        <a href="#">Nunc viverra vestibulum </a>
+        <p>Nunc viverra vestibulum magna, nec dignissim turpis rhoncus tincidunt et.</p>
+      </div>
+      <div class="news_box">
+        <a href="#">Fusce placerat ultrices</a>
+        <p>Integer ac ultricies nisi. Curabitur velit ante, porttitor ac feugiat a, porta ut lectus.</p>
+      </div>
+    </div>
+
+  </div> <!-- end of sidebar -->
+
+  <div id="tooplate_content">
+    {% block page_content %}
+      This is a page content
+    {% endblock page_content %}
+  </div> <!-- end of content -->
+
+{% endblock page_main %}
+  <div class="cleaner"></div>
+</div> <!-- end of main -->

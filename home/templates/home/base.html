@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{{ title }}</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <!--
+    Template 2051 Spot Light
+    http://www.tooplate.com/view/2051-spot-light
+  -->
+  <link href="{% url 'home:main_style' %}" rel="stylesheet" type="text/css" />
+  {% block header_addon %}
+    <link href="{% url 'home:gallery_style' %}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{% static 'home/js/jquery-1.3.2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/js/jquery.galleriffic.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/js/jquery.opacityrollover.js' %}"></script>
+    <!-- We only want the thunbnails to display when javascript is disabled -->
+    <script type="text/javascript">
+      document.write('<style>.noscript { display: none; }</style>');
+    </script>
+  {% endblock header_addon %}
+</head>
+<body id="{{ page_id }}">
+
+  <div id="tooplate_wrapper">
+
+    <div id="{{ header_id }}">
+
+      <!-- MAIN MENU ------------------------------------------------------ -->
+      <div id="tooplate_menu">
+        <ul>
+          <li>
+            {% if current_menu == 'home' %}
+              <a href="{% url 'home:index' %}" class="current">
+                <span></span>
+                Home
+              </a>
+            {% else %}
+              <a href="{% url 'home:index' %}"><span></span>Home</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if current_menu == 'about' %}
+              <a href="{% url 'home:about' %}" class="current">
+                <span></span>
+                About Us
+              </a>
+            {% else %}
+              <a href="{% url 'home:about' %}"><span></span>About Us</a>
+            {% endif %} 
+          </li>
+          <li>
+            {% if current_menu == 'gallery' %}
+              <a href="{% url 'home:gallery' %}" class="current">
+                <span></span>
+                Gallery
+              </a>
+            {% else %}
+              <a href="{% url 'home:gallery' %}"><span></span>Gallery</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if current_menu == 'blog' %}
+              <a href="{% url 'home:blog' %}" class="current">
+                <span></span>
+                Blog
+              </a>
+            {% else %}
+              <a href="{% url 'home:blog' %}"><span></span>Blog</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if current_menu == 'contact' %}
+              <a href="{% url 'home:contact' %}" class="current">
+                <span></span>
+                Contact
+              </a>
+            {% else %}
+              <a href="{% url 'home:contact' %}"><span></span>Contact</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+      <!-- END OF MAIN MENU ----------------------------------------------- -->
+
+      <div id="site_title"><h1><a href="#">{{ title }}</a></h1></div>
+
+      {% block page_slider %}
+      {% endblock page_slider %}
+
+    </div> <!-- end of header -->
+
+    {% block page_main %}
+    {% endblock page_main %}
+
+  </div> <!-- end of wrapper -->
+
+  <div id="tooplate_footer_wrapper">
+    <div id="tooplate_footer">
+      Copyright © 2018
+      <a href="#">Company Name</a> &mdash;
+      Designed by
+       <a href="http://www.tooplate.com" target="_parent">Website Templates</a>
+      <div class="cleaner"></div>
+    </div>
+  </div>
+
+  {% block footer_addon %}
+  {% endblock footer_addon %}
+
+</body>
+</html>

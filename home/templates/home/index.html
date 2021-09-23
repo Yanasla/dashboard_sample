@@ -1,0 +1,177 @@
+{% extends 'home/general.html' %}
+{% load static %}
+
+{% block page_slider %}
+  <div id="tooplate_slider">
+
+    <!-- Start Advanced Gallery Html Containers -->
+    <div id="gallery" class="content">
+      <div class="slideshow-container">
+        <div id="loading" class="loader"></div>
+        <div id="slideshow" class="slideshow"></div>
+      </div>
+    </div>
+
+    <div id="thumbs" class="navigation">
+      <ul class="thumbs noscript">
+
+        <li>
+          <a class="thumb" name="leaf" title="Title 01"
+             href="{% static 'home/images/slider/01_l.jpg' %}">
+            <img alt="Title 01" 
+                 src="{% static 'home/images/slider/01_t.jpg' %}" />
+          </a>
+        </li>
+
+        <li>
+          <a class="thumb" name="leaf" title="Title 02"
+             href="{% static 'home/images/slider/02_l.jpg' %}">
+            <img alt="Title 02"
+                 src="{% static 'home/images/slider/02_t.jpg' %}" />
+          </a>
+        </li>
+
+        <li>
+          <a class="thumb" name="leaf" title="Title 03"
+             href="{% static 'home/images/slider/03_l.jpg' %}">
+            <img alt="Title 03"
+                 src="{% static 'home/images/slider/03_t.jpg' %}" />
+          </a>
+        </li>
+
+        <li>
+          <a class="thumb" name="leaf" title="Title 04"
+             href="{% static 'home/images/slider/04_l.jpg' %}">
+            <img alt="Title 04"
+                 src="{% static 'home/images/slider/04_t.jpg' %}" />
+          </a>
+        </li>
+
+        <li>
+          <a class="thumb" name="leaf" title="Title 05"
+             href="{% static 'home/images/slider/05_l.jpg' %}">
+            <img alt="Title 05"
+                 src="{% static 'home/images/slider/05_t.jpg' %}" />
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+{% endblock page_slider %}
+
+{% block page_content %}
+
+  <div class="col_fw">
+    <h1>WELCOME TO SPOT LIGHT</h1>
+    <img src="{% static 'home/images/tooplate_image_01.jpg' %}"
+         alt="Image 01" class="image_fl" />
+    <p><em>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+      lectus sapien, congue quis condimentum ut, adipiscing nec orci.
+    </em></p>
+    <p>
+      Spot Light Theme is
+      <a href="http://www.tooplate.com/free-templates">
+        free website template
+      </a>
+      for everyone. You may edit and apply this template for any purpose.
+      Etiam ipsum diam, laoreet eu malesuada ut, viverra nec dui.
+      Cras et rutrum lacus. Praesent rhoncus molestie, in aliquam urna
+      elementum sit amet.
+    </p>
+    <a class="more">More</a>
+  </div>
+
+      <div class="col_fw_last">
+        <h2>Our Services</h2>
+        <p><em>Vivamus sit amet scelerisque orci. Nullam elit enim, dignissim lobortis rutrum non, ultricies vitae erat. Proin lobortis tellus ac tellus sollicitudin feugiat et at nibh. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</em></p>
+        <div class="cleaner h20"></div>
+        <div class="col_w300 float_l fp_service_box">
+          <h4>Service One</h4>
+          <img src="{% static 'home/images/vv-icon-01.png' %}" alt="image" />
+          <p> Ut hendrerit elementum dignissim. Phasellus dolor libero, pharetra id porttitor, sit amet ipsum.</p>
+          <a class="more" href="#">Detail</a>
+        </div>
+        <div class="col_w300 float_r fp_service_box">
+          <h4>Service Two</h4>
+          <img src="{% static 'home/images/vv-icon-02.png' %}" alt="image" />
+          <p>Pellentesque rutrum, nunc non varius ullamcorper, turpis felis varius mauris, vel porta urna tellus non est. </p>
+          <a class="more" href="#">Detail</a>
+        </div>
+        <div class="cleaner"></div>
+        <div class="col_w300 float_l fp_service_box">
+          <h4>Service Three</h4>
+          <img src="{% static 'home/images/vv-icon-03.png' %}" alt="image" />
+          <p>Nam in magna quis diam scelerisque laoreet non in diam. Curabitur diam in magna dictum at rutrum enim.</p>
+          <a class="more" href="#">Detail</a>
+        </div>
+        <div class="col_w300 float_r fp_service_box">
+          <h4>Service Four</h4>
+          <img src="{% static 'home/images/vv-icon-04.png' %}" alt="image" />
+          <p>Fusce bibendum dui non enim dignissim id pretium tellus mattis. Nunc interdum sagittis lorem in fringilla.</p>
+          <a class="more" href="#">Detail</a>
+        </div>
+        <div class="cleaner"></div>
+      </div>
+
+{% endblock page_content %}
+
+{% block footer_addon %}
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      // We only want these styles applied when javascript is enabled
+      $('div.navigation').css({'width' : '960px', 'float' : 'left'});
+      $('div.content').css('display', 'block');
+
+      // Initially set opacity on thumbs and add
+      // additional styling for hover effect on thumbs
+      var onMouseOutOpacity = 0.67;
+      $('#thumbs ul.thumbs li').opacityrollover({
+        mouseOutOpacity:   onMouseOutOpacity,
+        mouseOverOpacity:  1.0,
+        fadeSpeed:         'fast',
+        exemptionSelector: '.selected'
+      });
+
+      // Initialize Advanced Galleriffic Gallery
+      var gallery = $('#thumbs').galleriffic({
+        delay:                     2500,
+        numThumbs:                 5,
+        preloadAhead:              10,
+        enableTopPager:            false,
+        enableBottomPager:         false,
+        maxPagesToShow:            7,
+        imageContainerSel:         '#slideshow',
+        controlsContainerSel:      '#controls',
+        captionContainerSel:       '#caption',
+        loadingContainerSel:       '#loading',
+        renderSSControls:          true,
+        renderNavControls:         true,
+        playLinkText:              'Play Slideshow',
+        pauseLinkText:             'Pause Slideshow',
+        prevLinkText:              '&lsaquo; Previous Photo',
+        nextLinkText:              'Next Photo &rsaquo;',
+        nextPageLinkText:          'Next &rsaquo;',
+        prevPageLinkText:          '&lsaquo; Prev',
+        enableHistory:             false,
+        autoStart:                 false,
+        syncTransitions:           true,
+        defaultTransitionDuration: 900,
+        onSlideChange:             function(prevIndex, nextIndex) {
+          // 'this' refers to the gallery, which is an extension of $('#thumbs')
+          this.find('ul.thumbs').children()
+            .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+            .eq(nextIndex).fadeTo('fast', 1.0);
+        },
+        onPageTransitionOut:       function(callback) {
+          this.fadeTo('fast', 0.0, callback);
+        },
+        onPageTransitionIn:        function() {
+          this.fadeTo('fast', 1.0);
+        }
+      });
+    });
+  </script>
+{% endblock footer_addon %}
