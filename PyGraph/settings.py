@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'pygraph',
         'HOST': 'localhost',
         'PORT': '5432',
-        'USER': 'student',
-        'PASSWORD': '1',
+        'USER': 'postgres',
+        'PASSWORD': '1111',
     }
 }
 
