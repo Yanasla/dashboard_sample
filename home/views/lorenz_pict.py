@@ -34,11 +34,24 @@ def lorenz_pict(request, width, height, dpi=72):
 
     fig = plt.figure( figsize=(width/dpi, height/dpi), dpi=dpi)
 
-    ax = fig.gca( projection='3d')
+    ax = fig.gca( projection='3d' )   #задаем цвет задних стенок осей
+    ax.xaxis.pane.set_alpha(1.0)
+    ax.xaxis.pane.set_facecolor('#FFFF00FF')
+
+    ax.yaxis.pane.set_alpha(1.0)
+    ax.yaxis.pane.set_facecolor('#FFFF00FF')
+
+    ax.zaxis.pane.set_alpha(1.0)
+    ax.zaxis.pane.set_facecolor('#FFFF00FF')
 
     ax.plot(ak, bk, ck, lw=0.5)
 
+    for spine in ax.spines.values(): #магический прием
+        spine.set_visible(False)
+
+    fig.tight_layout()   #подогнать обрамление под размер изображения
+
     buf = io.BytesIO()
-    fig.savefig(buf, format='PNG')
+    fig.savefig(buf, format='PNG', transparent=True)
 
     return HttpResponse( buf.getvalue(), content_type='image/png')

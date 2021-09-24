@@ -17,7 +17,6 @@ def simple_picture(request, width, height, dpi=72):
     ax.plot(x,y)
 
     buf = io.BytesIO()
-    fig.savefig(buf, format='PNG')
+    fig.savefig(buf, format='PNG', transparent=True)    # Cохранить картинку в буфер
 
-    # Cохранить картинку в буфер
     return HttpResponse( buf.getvalue(), content_type='image/png' )
