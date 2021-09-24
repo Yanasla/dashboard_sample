@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def simple_picture(request):
+def simple_picture(request, width, height, dpi=72):
     # Формирование картинки
 
     x = np.linspace(-100,100,10000)
     y = np.sin(x) / x
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(width/dpi, height/dpi), dpi=dpi)
     ax.plot(x,y)
 
     buf = io.BytesIO()

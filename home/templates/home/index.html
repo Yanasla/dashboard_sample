@@ -17,17 +17,17 @@
 
         <li>
           <a class="thumb" name="leaf" title="Title 01"
-             href="{% static 'home/images/slider/01_l.jpg' %}">
+             href="{% url 'home:simple_picture' width=950 height=475 %}">
             <img alt="Title 01" 
-                 src="{% static 'home/images/slider/01_t.jpg' %}" />
+                 src="{% url 'home:simple_picture' width=186 height=110 %}" />
           </a>
         </li>
 
         <li>
           <a class="thumb" name="leaf" title="Title 02"
-             href="{% static 'home/images/slider/02_l.jpg' %}">
+             href="{% url 'home:simple_picture' width=950 height=475 %}">
             <img alt="Title 02"
-                 src="{% static 'home/images/slider/02_t.jpg' %}" />
+                 src="{% url 'home:lorenz_pict' width=186 height=110 %}" />
           </a>
         </li>
 

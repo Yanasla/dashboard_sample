@@ -12,5 +12,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('css/main_style', views.main_style, name='main_style'),
     path('css/gallery_style', views.gallery_style, name='gallery_style'),
-    path('images/simple_picture.png', views.simple_picture, name='simple_picture_small'),
+    path('images/simple_picture_<int:width>x<int:height>.png', views.simple_picture, name='simple_picture'),
+    path('images/lorenz_pict_<int:width>x<int:height>.png', views.lorenz_pict, name='lorenz_pict'),
 ]
