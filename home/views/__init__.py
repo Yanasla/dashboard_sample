@@ -8,3 +8,4 @@ from .contact import contact
 from .gallery import gallery
 from .index import index
 
+from .simple_picture import simple_picture
