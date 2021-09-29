@@ -10,3 +10,4 @@ from .index import index
 
 from .simple_picture import simple_picture
 from .lorenz_pict import lorenz_pict
+from .customers import customers

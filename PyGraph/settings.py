@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'PyGraph.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pygraph',
+        'NAME': 'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
         'USER': 'postgres',
