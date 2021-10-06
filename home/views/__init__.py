@@ -8,6 +8,6 @@ from .customers import customers
 from .gallery import gallery
 from .index import index
 from .lorenz_pict import lorenz_pict
-from .sells import sells
 from .simple_picture import simple_picture
+from .sells import sells
 from .stylesheets import main_style, gallery_style

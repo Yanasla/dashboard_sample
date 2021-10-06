@@ -19,16 +19,16 @@ def hours(tm):
 def customers(request, width, height, dpi=72):
     # Извлекаем данные из базы данных
 
-    conn = psycopg2.connect("dbname=postgres user=postgres", password='1111')
+    #conn = psycopg2.connect("dbname=postgres user=postgres", password='1111')
     
-    with conn.cursor() as curs:
-        curs.execute('''
+    with connection.cursor() as cursor:
+        cursor.execute('''
         select sell_date::time
             from sell_data.sells
             where sell_date::date = %s::date ;
         ''', ('2018-10-01',))  # если переменная то подставлять нужно кортеж (требует джанго)
 
-        dt = np.array([hours(x) for (x,) in curs])
+        dt = np.array([hours(x) for (x,) in cursor]) #данные в виде кортежа, преобразовываем в массив numpy
 
     fig, ax = plt.subplots(figsize=(width / dpi, height / dpi), dpi=dpi)
 
