@@ -34,6 +34,11 @@ def customers(request, width, height, dpi=72):
 
     # Тут формируем картинку
     ax.hist(dt, bins=24*4)
+    
+    ax.set_xlim(0,24) #пределы изменения гистограммы
+    ax.set_xticks(list(range(0,25,3))) #отметки через каждые 3 часа
+    fig.tight_layout()
+    
 
     buf = io.BytesIO()
     fig.savefig(buf, format='PNG')
