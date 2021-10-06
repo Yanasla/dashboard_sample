@@ -16,4 +16,5 @@ urlpatterns = [
     path('images/lorenz_pict_<int:width>x<int:height>.png', views.lorenz_pict, name='lorenz_pict'),
     path('images/customers_<int:width>x<int:height>.png', views.customers, name='customers'),
     path('images/sells_<int:width>x<int:height>.png', views.sells, name='sells'),
+    path('images/day_res_<int:width>x<int:height>.png', views.day_res, name='day_res'),
 ]

@@ -5,6 +5,7 @@ from .about import about
 from .blog import blog
 from .contact import contact
 from .customers import customers
+from .day_res import day_res
 from .gallery import gallery
 from .index import index
 from .lorenz_pict import lorenz_pict
