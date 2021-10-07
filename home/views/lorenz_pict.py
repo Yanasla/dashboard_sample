@@ -37,13 +37,13 @@ def lorenz_pict(request, width, height, dpi=72):
     ax = fig.gca( projection='3d' )
 
     ax.xaxis.pane.set_alpha(1.0)
-    ax.xaxis.pane.set_facecolor('#FFFF00FF')  #задаем цвет задних стенок осей
+    ax.xaxis.pane.set_facecolor('#FCBDFD')  #задаем цвет задних стенок осей - розовый
 
     ax.yaxis.pane.set_alpha(1.0)
-    ax.yaxis.pane.set_facecolor('#FFFF00FF')
+    ax.yaxis.pane.set_facecolor('#C6DAFD') #голубой
 
     ax.zaxis.pane.set_alpha(1.0)
-    ax.zaxis.pane.set_facecolor('#FFFF00FF')
+    ax.zaxis.pane.set_facecolor('#E1F4A7') #зеленый
 
     ax.plot(ak, bk, ck, lw=0.5)
 
